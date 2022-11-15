@@ -56,9 +56,9 @@
   width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.card:hover.stock,
+.card:focus.stock,
+.card:active.stock {
   border-color: #ffffff;
 }
 
@@ -82,6 +82,26 @@
   font-size: 1rem;
 }
 
+.card :global(.modal-title),
+.card :global(.modal-body) {
+  color: black;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 
 @media (max-width: 600px) {
   .grid {
@@ -91,13 +111,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }

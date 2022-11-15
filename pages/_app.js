@@ -1,15 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css'
-import Layout from '../components/layout'
-import { SSRProvider } from 'react-bootstrap'
 
-function MyApp({ Component, pageProps }) {
+import { SSRProvider } from 'react-bootstrap'
+import { useEffect } from "react";
+import { SessionProvider } from "next-auth/react"
+
+import Layout from '../components/layout'
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
   return (
-    <SSRProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </SSRProvider>
+    <SessionProvider session={session}>
+      <SSRProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SSRProvider>
+    </SessionProvider>
   )
 }
 
