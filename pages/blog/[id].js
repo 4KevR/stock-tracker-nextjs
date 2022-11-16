@@ -1,6 +1,8 @@
-import styles from '../../styles/SingleBlog.module.css'
-import Head from 'next/head'
 import prisma from '../../lib/prisma';
+
+import styles from '../../styles/SingleBlog.module.css'
+
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from "next/link"
 

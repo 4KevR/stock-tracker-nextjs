@@ -11,7 +11,7 @@ import { Cinzel } from '@next/font/google'
 
 const cinzel = Cinzel({
     weight: '400',
-
+    subsets: ['latin'],
 })
 
 export default function OwnNavbar() {
